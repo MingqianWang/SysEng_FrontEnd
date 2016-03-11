@@ -1,5 +1,6 @@
 package com.example.maddiewhitehall.pollutionapp;
 
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.wearable.DataApi;
 import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.DataMapItem;
@@ -25,12 +28,19 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class MainActivityPhone extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
+public class MainActivityPhone extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener{
 
     GoogleApiClient mGoogleApiClient = null;
     public static final String TAG = "MyDataMap";
     public static final String WEARABLE_DATA_PATH = "/wearable/data/path"; //can be any string that starts with a forward slash
     private static final String TAG_2 = "MainActivity";
+
+    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 60000;
+    public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = UPDATE_INTERVAL_IN_MILLISECONDS / 2;
+
+    private Location mLastLocation = null;
+    private LocationRequest mLocationRequest;
+    private boolean mRequestingLocationUpdates;
 
 
     private class FetchDataTask extends AsyncTask<Void,Void,Void>
@@ -42,9 +52,12 @@ public class MainActivityPhone extends AppCompatActivity implements GoogleApiCli
             {
                 String result = new DataFetcher().getUrlString("https://fierce-peak-41091.herokuapp.com/api");
                 JSONArray jsonArray = new JSONArray(result);
-                JSONObject object = jsonArray.getJSONObject(1);
-                double NO2 = object.getDouble("NO2");
-                double CO = object.getDouble("CO");
+                JSONObject object = jsonArray.getJSONObject(0);
+                JSONArray data = object.getJSONArray("data");
+                JSONObject a = data.getJSONObject(0);
+                JSONObject b = data.getJSONObject(1);
+                double NO2 = Double.parseDouble(a.getString("no2"));
+                double CO = Double.parseDouble(b.getString("so2"));
                 //Log.i(TAG, "Fetched contents of URL: " + NO2);
                 Log.i(TAG, "NO2: " + NO2 + ", CO: " + CO);
                 sendDataMapToDataLayer((float)NO2,(float)CO);
@@ -67,11 +80,16 @@ public class MainActivityPhone extends AppCompatActivity implements GoogleApiCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mRequestingLocationUpdates = false;
+
         GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
         builder.addApi(Wearable.API);
+        builder.addApi(LocationServices.API);
         builder.addConnectionCallbacks(this);
         builder.addOnConnectionFailedListener(this);
         mGoogleApiClient = builder.build();
+        createLocationRequest();
 
     }
 
@@ -85,6 +103,7 @@ public class MainActivityPhone extends AppCompatActivity implements GoogleApiCli
     protected void onStop() {
         if(mGoogleApiClient != null && mGoogleApiClient.isConnected())
         {
+            stopLocationUpdates();
             mGoogleApiClient.disconnect();
         }
         super.onStop();
@@ -93,6 +112,7 @@ public class MainActivityPhone extends AppCompatActivity implements GoogleApiCli
     @Override
     public void onConnected(Bundle bundle) {
         sendDataMapToDataLayer(3.0f, 3.0f);
+        startLocationUpdates();
     }
 
     private DataMap createDataMap(float NO2,float CO)
@@ -169,4 +189,41 @@ public class MainActivityPhone extends AppCompatActivity implements GoogleApiCli
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
     }
+
+    protected void createLocationRequest() {
+        mLocationRequest = new LocationRequest();
+
+        mLocationRequest.setInterval(UPDATE_INTERVAL_IN_MILLISECONDS);
+
+
+        mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
+
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+    }
+
+
+    protected void startLocationUpdates() {
+        try {
+            LocationServices.FusedLocationApi.requestLocationUpdates(
+                    mGoogleApiClient, mLocationRequest, this);
+        } catch(SecurityException e) {
+            Log.e("error", "something went wrong, unable to start location update");
+        }
+    }
+
+    protected void stopLocationUpdates() {
+
+        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        mLastLocation = location;
+        new FetchDataTask().execute();
+        Log.v("message", String.valueOf(mLastLocation.getLatitude()));
+        Log.v("message", String.valueOf(mLastLocation.getLongitude()));
+
+    }
+
+
 }

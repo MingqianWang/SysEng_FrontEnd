@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -27,8 +28,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private boolean mRequestingLocationUpdates;
     private Button mStartUpdatesButton;
     private Button mStopUpdatesButton;
+    private TextView mLongitudeTextView;
+    private TextView mLatitudeTextView;
 
-    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
+    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 60000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = UPDATE_INTERVAL_IN_MILLISECONDS / 2;
 
     @Override
@@ -37,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         setContentView(R.layout.activity_main);
         mStartUpdatesButton = (Button) findViewById(R.id.STARTUPDATES);
         mStopUpdatesButton = (Button) findViewById(R.id.STOPUPDATES);
+
+        mLongitudeTextView = (TextView) findViewById(R.id.longitudeTextView);
+        mLatitudeTextView = (TextView) findViewById(R.id.latitudeTextView);
+
         mRequestingLocationUpdates = false;
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -53,8 +60,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null) {
-            Log.v("message",String.valueOf(mLastLocation.getLatitude()));
-            Log.v("message",String.valueOf(mLastLocation.getLongitude()));
+            //Log.v("message",String.valueOf(mLastLocation.getLatitude()));
+            //Log.v("message",String.valueOf(mLastLocation.getLongitude()));
+            mLatitudeTextView.setText(String.valueOf(mLastLocation.getLatitude()));
+            mLongitudeTextView.setText(String.valueOf(mLastLocation.getLongitude()));
         }
         }catch (SecurityException e) {
             Log.e("error", "something went wrong, unable to get location");
@@ -128,8 +137,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     @Override
     public void onLocationChanged(Location location) {
         mLastLocation = location;
-        Log.v("message",String.valueOf(mLastLocation.getLatitude()));
-        Log.v("message",String.valueOf(mLastLocation.getLongitude()));
+        //Log.v("message",String.valueOf(mLastLocation.getLatitude()));
+        //Log.v("message",String.valueOf(mLastLocation.getLongitude()));
+        mLatitudeTextView.setText(String.valueOf(mLastLocation.getLatitude()));
+        mLongitudeTextView.setText(String.valueOf(mLastLocation.getLongitude()));
     }
 
 
