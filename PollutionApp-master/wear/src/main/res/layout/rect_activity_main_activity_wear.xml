@@ -55,7 +55,7 @@
         android:layout_height="85dp"
         android:layout_margin="3dp"
         android:scaleType="center"
-        android:src="@mipmap/building_white"/>
+        android:src="@mipmap/sun_white"/>
     <!--
         android:background="@color/green"
         -->

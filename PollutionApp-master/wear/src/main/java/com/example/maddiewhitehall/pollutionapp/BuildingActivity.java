@@ -10,21 +10,36 @@ import android.widget.TextView;
 
 public class BuildingActivity extends Activity {
 
-    private TextView mTextView;
+    private TextView LUXReading;
     private ImageButton button;
     private Intent intent;
+    Float incomingUV = 0.004f;
+
+    public static Activity level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        level = this;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_building);
+        setContentView(R.layout.activity_light);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
-                mTextView = (TextView) stub.findViewById(R.id.text);
+                LUXReading = (TextView) stub.findViewById(R.id.light_reading);
 
-                button = (ImageButton) stub.findViewById(R.id.backButton);
+                LUXReading.setText(Float.toString(incomingUV));
+
+                button = (ImageButton) stub.findViewById(R.id.lightButton);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        BuildingValueActivity.num.finish();
+                        intent = new Intent(BuildingActivity.this, BuildingValueActivity.class);
+                        startActivity(intent);
+                    }
+
+                });
             }
         });
     }

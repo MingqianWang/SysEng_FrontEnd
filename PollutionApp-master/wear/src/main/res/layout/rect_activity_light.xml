@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#efeeee"
     tools:ignore="contentDescription"
-    tools:context=".SoundActivity"
+    tools:context=".BuildingActivity"
     tools:deviceIds="wear_square">
 
     <LinearLayout
@@ -21,13 +21,13 @@
             android:background="@color/white">
 
             <ImageButton
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/audio_purple"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@mipmap/sun_yellow"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitCenter"
                 android:background="@null"
-                android:id="@+id/audioButton"
+                android:id="@+id/lightButton"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
             <!--android:contentDescription="changeValues"-->
@@ -47,19 +47,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
-                    android:paddingLeft="18dp"
-                    android:text="Decibels"
+                    android:paddingLeft="25dp"
+                    android:text="LUX"
                     android:textColor="@color/black_54p"
-                    android:textSize="18dp"/>
+                    android:textSize="20dp"/>
 
                 <TextView
-                    android:id="@+id/sound_reading"
+                    android:id="@+id/light_reading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="50dp"
                     android:text=""
                     android:textColor="@color/black_54p"
-                    android:textSize="18dp"/>
+                    android:textSize="20dp"/>
 
 
 

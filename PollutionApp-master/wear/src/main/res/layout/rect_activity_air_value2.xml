@@ -21,16 +21,6 @@
             android:background="@color/white">
 
             <ImageButton
-                android:src="@mipmap/back_arrow"
-                android:layout_width="25dp"
-                android:layout_height="23dp"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:id="@+id/backButtonScale"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true" />
-
-            <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/cloud_blue"
@@ -60,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="CO2"
+                    android:text="CO"
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
 
@@ -118,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="PM2.5"
+                    android:text="PM\u2082\u2085"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -174,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="NO2"
+                    android:text="NO\u2082"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -224,6 +214,181 @@
                     </RelativeLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:text="SO\u2082"
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:columnCount="5"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/Grid4a"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid4b"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid4c"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid4d"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid4e"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:text="O\u2083"
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:columnCount="5"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/Grid5a"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid5b"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid5c"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid5d"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid5e"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:text="PM\u2081\u2080"
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:columnCount="5"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/Grid6a"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid6b"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid6c"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid6d"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid6e"
+                        android:layout_height="22dp"
+                        android:layout_width="5dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
 
             </GridLayout>
         </ScrollView>

@@ -21,16 +21,6 @@
             android:background="@color/white">
 
             <ImageButton
-                android:src="@mipmap/back_arrow"
-                android:layout_width="25dp"
-                android:layout_height="23dp"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:id="@+id/backButton"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true" />
-
-            <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/cloud_blue"
@@ -61,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="CO2"
+                    android:text="CO"
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
 
@@ -81,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="PM2.5"
+                    android:text="PM\u2082\u2085"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -95,12 +85,13 @@
                     android:textSize="20sp"/>
                 <!--android:text=""-->
 
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="NO2"
+                    android:text="NO\u2082"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -119,9 +110,9 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="NO2"
+                    android:text="SO\u2082"
                     android:textColor="@color/black_54p"
-                    android:textSize="20dp"/>
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/text4"
@@ -138,9 +129,9 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="NO2"
+                    android:text="O\u2083"
                     android:textColor="@color/black_54p"
-                    android:textSize="20dp"/>
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/text5"
@@ -157,9 +148,19 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="NO2"
+                    android:text="PM\u2081\u2080"
                     android:textColor="@color/black_54p"
-                    android:textSize="20dp"/>
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="40dp"
+                    android:text=""
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
 
 
             </GridLayout>

@@ -23,8 +23,6 @@ public class TrafficActivity extends Activity {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
-
-                button = (ImageButton) stub.findViewById(R.id.backButton);
             }
         });
     }

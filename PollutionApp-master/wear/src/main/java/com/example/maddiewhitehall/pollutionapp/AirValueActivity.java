@@ -13,14 +13,15 @@ import android.graphics.Color;
 public class AirValueActivity extends Activity {
 
     private TextView mTextView;
-    private ImageButton buttonBack, cloudView;
-    private Intent intentBack, intent;
-    RelativeLayout a, b, c, d, e, f, g, h, i, j;
-    RelativeLayout[][] scale = new RelativeLayout[3][5];
+    private ImageButton cloudView;
+    private Intent intent;
+    RelativeLayout[][] scale = new RelativeLayout[6][5];
+    public static Activity num;
     int levelScale = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        num = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_air_value2);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
@@ -29,9 +30,8 @@ public class AirValueActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
 
-                buttonBack = (ImageButton) stub.findViewById(R.id.backButton);
 
-
+                //sort this out please...
                 scale[0][0] = (RelativeLayout) stub.findViewById(R.id.Grid1a);
                 scale[0][1] = (RelativeLayout) stub.findViewById(R.id.Grid1b);
                 scale[0][2] = (RelativeLayout) stub.findViewById(R.id.Grid1c);
@@ -47,43 +47,51 @@ public class AirValueActivity extends Activity {
                 scale[2][2] = (RelativeLayout) stub.findViewById(R.id.Grid3c);
                 scale[2][3] = (RelativeLayout) stub.findViewById(R.id.Grid3d);
                 scale[2][4] = (RelativeLayout) stub.findViewById(R.id.Grid3e);
+                scale[3][0] = (RelativeLayout) stub.findViewById(R.id.Grid4a);
+                scale[3][1] = (RelativeLayout) stub.findViewById(R.id.Grid4b);
+                scale[3][2] = (RelativeLayout) stub.findViewById(R.id.Grid4c);
+                scale[3][3] = (RelativeLayout) stub.findViewById(R.id.Grid4d);
+                scale[3][4] = (RelativeLayout) stub.findViewById(R.id.Grid4e);
+                scale[4][0] = (RelativeLayout) stub.findViewById(R.id.Grid5a);
+                scale[4][1] = (RelativeLayout) stub.findViewById(R.id.Grid5b);
+                scale[4][2] = (RelativeLayout) stub.findViewById(R.id.Grid5c);
+                scale[4][3] = (RelativeLayout) stub.findViewById(R.id.Grid5d);
+                scale[4][4] = (RelativeLayout) stub.findViewById(R.id.Grid5e);
+                scale[5][0] = (RelativeLayout) stub.findViewById(R.id.Grid6a);
+                scale[5][1] = (RelativeLayout) stub.findViewById(R.id.Grid6b);
+                scale[5][2] = (RelativeLayout) stub.findViewById(R.id.Grid6c);
+                scale[5][3] = (RelativeLayout) stub.findViewById(R.id.Grid6d);
+                scale[5][4] = (RelativeLayout) stub.findViewById(R.id.Grid6e);
 
 
-                for (int n = 0; n < 3; n++) {
+                //make a method for this.. public void createScale(int scaleNum, RelativeLayout scale[int n][])
+                for (int n = 0; n < scale.length; n++) {
                     for (int k = 0; k < levelScale; k++) {
                         scale[n][k].setBackgroundColor(Color.rgb(0, 0, 0));
                     }
                     levelScale++;
                 }
 
+
                 cloudView = (ImageButton) stub.findViewById(R.id.cloudButton);
                 cloudView.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
+                    public void onClick (View v) {
+                        if(MainActivityWear.airRun==1){
+                            AirActivity.level.finish();
+                        }
                         intent = new Intent(AirValueActivity.this, AirActivity.class);
                         startActivity(intent);
-                        //finish();
+                        MainActivityWear.airRun = 1;
                     }
-
                 });
+
             }
         });
 
     }
 }
 
-   /* public void createScale(int scaleNum, RelativeLayout scale[int n][]) {
 
 
-        for (int k = 0; k < scaleNum; k++) {
-            scale[n][k].setBackgroundColor(Color.rgb(255, 128, 0));
-        }
-
-
-    };*/
-
-
-
-
-//need a method that will pass in the scale number and the array of IDs and will create the RelativeLayout thing...
 
