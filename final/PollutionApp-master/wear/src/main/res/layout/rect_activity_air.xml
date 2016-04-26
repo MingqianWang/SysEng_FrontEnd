@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="CO"
+                    android:text="NO\u2082"
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
 
@@ -60,7 +60,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:paddingTop="10dp"
-                   android:paddingLeft="40dp"
+                   android:paddingLeft="60dp"
                    android:text=""
                    android:textColor="@color/black_54p"
                    android:textSize="20sp"/>
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="PM\u2082\u2085"
+                    android:text="CO"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:paddingLeft="40dp"
+                    android:paddingLeft="60dp"
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
                 <!--android:text=""-->
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="NO\u2082"
+                    android:text="SO\u2082"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -100,26 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:paddingLeft="40dp"
-                    android:text=""
-                    android:textColor="@color/black_54p"
-                    android:textSize="20sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="20dp"
-                    android:text="SO\u2082"
-                    android:textColor="@color/black_54p"
-                    android:textSize="20sp"/>
-
-                <TextView
-                    android:id="@+id/text4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="40dp"
+                    android:paddingLeft="60dp"
                     android:text=""
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
@@ -134,11 +115,11 @@
                     android:textSize="20sp"/>
 
                 <TextView
-                    android:id="@+id/text5"
+                    android:id="@+id/text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:paddingLeft="40dp"
+                    android:paddingLeft="60dp"
                     android:text=""
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
@@ -153,11 +134,30 @@
                     android:textSize="20sp"/>
 
                 <TextView
+                    android:id="@+id/text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="60dp"
+                    android:text=""
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:text="PM\u2082\u2085"
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
+
+                <TextView
                     android:id="@+id/text6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:paddingLeft="40dp"
+                    android:paddingLeft="60dp"
                     android:text=""
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>

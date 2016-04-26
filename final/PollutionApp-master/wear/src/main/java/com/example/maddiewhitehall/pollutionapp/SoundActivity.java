@@ -25,9 +25,17 @@ public class SoundActivity extends Activity {
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
+
                 DBReading = (TextView) stub.findViewById(R.id.sound_reading);
 
-                DBReading.setText(Float.toString(incomingDB));
+                if(Double.parseDouble(MainActivityWear.soundData[0][1])==0.0){
+                    DBReading.setText("-");
+                }
+                else{
+                    DBReading.setText(MainActivityWear.soundData[0][1]);
+                }
+
+
 
                 button = (ImageButton) stub.findViewById(R.id.audioButton);
                 button.setOnClickListener(new View.OnClickListener() {

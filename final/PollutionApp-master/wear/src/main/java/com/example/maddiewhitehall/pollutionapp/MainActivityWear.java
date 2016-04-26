@@ -25,12 +25,23 @@ public class MainActivityWear extends Activity {
     private static ImageButton airButton, trafficButton, soundButton, lightButton;
     private static Intent intent;
     public static int airRun = 0, lightRun = 0, soundRun = 0;
+    public static int count=0, countElem=0;
     static int traffic, air, sound, light;
-    static int nullStatus = Color.rgb(60,60,60), //grey
-                low = Color.rgb(0,153,0), //green
-                medium = Color.rgb(255,128,0),//orange
-                high = Color.rgb(255,0,0); //red
+    public static int nullStatus = Color.rgb(40,40,40), //grey
+            low = Color.rgb(0,153,0), //green
+            medium = Color.rgb(255,128,0),//orange
+            high = Color.rgb(255,0,0); //red
 
+    //public static String[] data;
+    public static String[] nullArray = {"0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"};
+
+    public static String[][] airData = new String[6][2]; //top is value, bottom is raw data
+    public static String[][] soundData = new String[1][2];
+    public static String[][] lightData = new String[1][2];
+    public static String[][] trafficData = {{"0"},{"0"}};
+
+    //dummy data
+    //public static String[] data = {"0.0","0.0","0.0","0.0",/**/"1","h","0.4","h",/**/"8","r","3.72","r",/**/"0.0","0.0","0.0","0.0",/**/"4","d","2.4","d",/**/"0.0","0.0","0.0","0.0",/**/"5","j","6.14","j",/**/"3","a","4.0","a"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,89 +49,118 @@ public class MainActivityWear extends Activity {
         setContentView(R.layout.activity_main_activity_wear);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
 
+        final String[] data = getIntent().getStringArrayExtra("dataMap");
+
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
                 //mTextView = (TextView) stub.findViewById(R.id.text);
 
+                if(data!=null){
+                    System.out.println("splitting array");
+                    arraySplit(data);
+
+                }
+                else{
+                    System.out.println("array is null");
+                    arraySplit(nullArray);
+                }
+
                 trafficButton = (ImageButton) stub.findViewById(R.id.button1);
-                traffic = colourGetter(trafficButton);
+                traffic = colourGetter(trafficButton,trafficData);
                 soundButton = (ImageButton) stub.findViewById(R.id.button2);
-                sound = colourGetter(soundButton);
+                sound = colourGetter(soundButton,soundData);
                 airButton = (ImageButton) stub.findViewById(R.id.button3);
-                air = colourGetter(airButton);
+                air = colourGetter(airButton,airData);
                 lightButton = (ImageButton) stub.findViewById(R.id.button4);
-                light = colourGetter(lightButton);
+                light = colourGetter(lightButton,lightData);
 
 
-                if (traffic != 0) {
+                if (traffic != nullStatus) {
                     trafficButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             intent = new Intent(MainActivityWear.this, TrafficActivity.class);
-
                             startActivity(intent);
                         }
                     });
                 }
-                if (sound != 0) {
+                if (sound != nullStatus) {
                     soundButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             intent = new Intent(MainActivityWear.this, SoundValueActivity.class);
-
                             startActivity(intent);
                         }
                     });
                 }
-                if (air != 0) {
+                if (air != nullStatus) {
                     airButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             intent = new Intent(MainActivityWear.this, AirValueActivity.class);
-
                             startActivity(intent);
                         }
                     });
                 }
-                if (light != 0) {
+                if (light != nullStatus) {
                     lightButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             intent = new Intent(MainActivityWear.this, BuildingValueActivity.class);
-
                             startActivity(intent);
                         }
                     });
                 }
             }
         });
-        String[] data = getIntent().getStringArrayExtra("dataMap");
-        if(data != null) {
-            Log.v("MainActivityAir", data[0]);
-        }
     }
 
-    public static int colourGetter(ImageButton button /*,value array*/){
+    public static void arraySplit(String[] data){
+
+        airData[0][0]=data[0];  //no2
+        airData[0][1]=data[2];
+        airData[1][0]=data[4];  //co
+        airData[1][1]=data[6];
+        airData[2][0]=data[8];  //so2
+        airData[2][1]=data[10];
+        airData[3][0]=data[12]; //03
+        airData[3][1]=data[14];
+        airData[4][0]=data[16]; //pm10
+        airData[4][1]=data[18];
+        airData[5][0]=data[20]; //pm25
+        airData[5][1]=data[22];
+
+        lightData[0][0]=data[24];
+        lightData[0][1]=data[26];
+
+        soundData[0][0]=data[28];
+        soundData[0][1]=data[30];
+    }
+
+    public static int colourGetter(ImageButton button, String[][] data){
         int status;
         int orange = 0;
         int green = 0;
         int red = 0;
+        int now;
 
+        for(int c=0; c<data.length;c++){
+            now = (int)(Double.parseDouble(data[c][0]));
+            //System.out.println(now);
 
-        //for(int k = 0; k < 3 /*value.length*/; k++){ //iterate through all the values in the thing
-          //  if(/*value[k]*/ >= 7){
-            //    red++;
-            //}
-            //else if(/*value[k]*/ >= 5){
-             //   orange ++;
-            //}
-            //else if(/*value[k]*/!=null{
-             //   green ++;
-            //}
-        //}
+            if(now >= 7){
+                red++;
+            }
+            else if(now >= 5){
+                orange ++;
+            }
+            else if(now != 0){
+                green ++;
+            }
+        }
 
-        if((red == 0)&&(orange == 1)&&(green==0)){
+        if((red == 0)&&(orange == 0)&&(green==0)){
             status = nullStatus;
         }
         else if(red!=0){

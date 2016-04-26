@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
                     android:paddingLeft="13dp"
-                    android:text="bluehjkdsf"
+                    android:text="Congestion"
                     android:textColor="@color/black_54p"
                     android:textSize="17dp"/>
 
@@ -56,7 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="27dp"
-                    android:text="rgv"
+                    android:text="-"
                     android:textColor="@color/black_54p"
                     android:textSize="17dp"/>
 

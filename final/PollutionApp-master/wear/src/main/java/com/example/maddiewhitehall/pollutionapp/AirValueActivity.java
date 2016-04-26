@@ -16,8 +16,13 @@ public class AirValueActivity extends Activity {
     private ImageButton cloudView;
     private Intent intent;
     RelativeLayout[][] scale = new RelativeLayout[6][5];
+
+    int [][] gridLayout = {{R.id.Grid1a,R.id.Grid1b,R.id.Grid1c,R.id.Grid1d,R.id.Grid1e,R.id.Grid1f,R.id.Grid1g,R.id.Grid1h,R.id.Grid1i,R.id.Grid1j},{R.id.Grid2a,R.id.Grid2b,R.id.Grid2c,R.id.Grid2d,R.id.Grid2e,R.id.Grid2f,R.id.Grid2g,R.id.Grid2h,R.id.Grid2i,R.id.Grid2j},
+            {R.id.Grid3a,R.id.Grid3b,R.id.Grid3c,R.id.Grid3d,R.id.Grid3e,R.id.Grid3f,R.id.Grid3g,R.id.Grid3h,R.id.Grid3i,R.id.Grid3j},{R.id.Grid4a,R.id.Grid4b,R.id.Grid4c,R.id.Grid4d,R.id.Grid4e,R.id.Grid4f,R.id.Grid4g,R.id.Grid4h,R.id.Grid4i,R.id.Grid4j},
+                    {R.id.Grid5a,R.id.Grid5b,R.id.Grid5c,R.id.Grid5d,R.id.Grid5e,R.id.Grid5f,R.id.Grid5g,R.id.Grid5h,R.id.Grid5i,R.id.Grid5j},{R.id.Grid6a,R.id.Grid6b,R.id.Grid6c,R.id.Grid6d,R.id.Grid6e,R.id.Grid6f,R.id.Grid6g,R.id.Grid6h,R.id.Grid6i,R.id.Grid6j}};
+
     public static Activity num;
-    int levelScale = 0;
+    int airLevel = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,46 +35,31 @@ public class AirValueActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
 
-
-                //sort this out please...
-                scale[0][0] = (RelativeLayout) stub.findViewById(R.id.Grid1a);
-                scale[0][1] = (RelativeLayout) stub.findViewById(R.id.Grid1b);
-                scale[0][2] = (RelativeLayout) stub.findViewById(R.id.Grid1c);
-                scale[0][3] = (RelativeLayout) stub.findViewById(R.id.Grid1d);
-                scale[0][4] = (RelativeLayout) stub.findViewById(R.id.Grid1e);
-                scale[1][0] = (RelativeLayout) stub.findViewById(R.id.Grid2a);
-                scale[1][1] = (RelativeLayout) stub.findViewById(R.id.Grid2b);
-                scale[1][2] = (RelativeLayout) stub.findViewById(R.id.Grid2c);
-                scale[1][3] = (RelativeLayout) stub.findViewById(R.id.Grid2d);
-                scale[1][4] = (RelativeLayout) stub.findViewById(R.id.Grid2e);
-                scale[2][0] = (RelativeLayout) stub.findViewById(R.id.Grid3a);
-                scale[2][1] = (RelativeLayout) stub.findViewById(R.id.Grid3b);
-                scale[2][2] = (RelativeLayout) stub.findViewById(R.id.Grid3c);
-                scale[2][3] = (RelativeLayout) stub.findViewById(R.id.Grid3d);
-                scale[2][4] = (RelativeLayout) stub.findViewById(R.id.Grid3e);
-                scale[3][0] = (RelativeLayout) stub.findViewById(R.id.Grid4a);
-                scale[3][1] = (RelativeLayout) stub.findViewById(R.id.Grid4b);
-                scale[3][2] = (RelativeLayout) stub.findViewById(R.id.Grid4c);
-                scale[3][3] = (RelativeLayout) stub.findViewById(R.id.Grid4d);
-                scale[3][4] = (RelativeLayout) stub.findViewById(R.id.Grid4e);
-                scale[4][0] = (RelativeLayout) stub.findViewById(R.id.Grid5a);
-                scale[4][1] = (RelativeLayout) stub.findViewById(R.id.Grid5b);
-                scale[4][2] = (RelativeLayout) stub.findViewById(R.id.Grid5c);
-                scale[4][3] = (RelativeLayout) stub.findViewById(R.id.Grid5d);
-                scale[4][4] = (RelativeLayout) stub.findViewById(R.id.Grid5e);
-                scale[5][0] = (RelativeLayout) stub.findViewById(R.id.Grid6a);
-                scale[5][1] = (RelativeLayout) stub.findViewById(R.id.Grid6b);
-                scale[5][2] = (RelativeLayout) stub.findViewById(R.id.Grid6c);
-                scale[5][3] = (RelativeLayout) stub.findViewById(R.id.Grid6d);
-                scale[5][4] = (RelativeLayout) stub.findViewById(R.id.Grid6e);
+                for(int b=0;b<scale.length;b++){
+                    for(int c=0;c<scale[b].length;c++){
+                        scale[b][c] = (RelativeLayout) stub.findViewById(gridLayout[b][c]);
+                    }
+                }
 
 
                 //make a method for this.. public void createScale(int scaleNum, RelativeLayout scale[int n][])
                 for (int n = 0; n < scale.length; n++) {
-                    for (int k = 0; k < levelScale; k++) {
-                        scale[n][k].setBackgroundColor(Color.rgb(0, 0, 0));
+                    airLevel = (int)(Double.parseDouble(MainActivityWear.airData[n][0]));
+                    for (int k = 0; k < airLevel; k++) {
+                        int colour = 0;
+
+                        if(airLevel<3){
+                            colour = MainActivityWear.low;
+                        }
+                        else if(airLevel>7){
+                            colour = MainActivityWear.high;
+                        }
+                        else{
+                            colour = MainActivityWear.medium;
+                        }
+
+                        scale[n][k].setBackgroundColor(colour);
                     }
-                    levelScale++;
                 }
 
 

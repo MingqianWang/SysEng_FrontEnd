@@ -17,7 +17,10 @@ public class BuildingValueActivity extends Activity {
     private Intent intent;
     RelativeLayout [] scale = new RelativeLayout[5];
     public static Activity num;
-    int uvLevel = 3;
+
+    int [] gridLayout = {R.id.Grid1a,R.id.Grid1b,R.id.Grid1c,R.id.Grid1d,R.id.Grid1e,R.id.Grid1f,R.id.Grid1g,R.id.Grid1h,R.id.Grid1i,R.id.Grid1j};
+
+    int uvLevel = (int)(Double.parseDouble(MainActivityWear.lightData[0][0]));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +33,23 @@ public class BuildingValueActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
 
-                scale[0] = (RelativeLayout) stub.findViewById(R.id.Grid1a);
-                scale[1] = (RelativeLayout) stub.findViewById(R.id.Grid1b);
-                scale[2] = (RelativeLayout) stub.findViewById(R.id.Grid1c);
-                scale[3] = (RelativeLayout) stub.findViewById(R.id.Grid1d);
-                scale[4] = (RelativeLayout) stub.findViewById(R.id.Grid1e);
+                for(int b=0;b<scale.length;b++){
+                    scale[b] = (RelativeLayout) stub.findViewById(gridLayout[b]);
+                }
 
                 for (int n = 0; n < uvLevel; n++) {
-                    scale[n].setBackgroundColor(Color.rgb(0, 0, 0));
+                    int colour = 0;
+
+                    if(uvLevel<3){
+                        colour = MainActivityWear.low;
+                    }
+                    else if(uvLevel>7){
+                        colour = MainActivityWear.high;
+                    }
+                    else{
+                        colour = MainActivityWear.medium;
+                    }
+                    scale[n].setBackgroundColor(colour);
                 }
 
 

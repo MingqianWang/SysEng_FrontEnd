@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -18,8 +17,7 @@ public class AirActivity extends Activity {
     private ImageButton cloudView;
     private Intent intentValue;
     public static Activity level;
-    Float incomingAir[]={3.12f,0.23522f,3.44f,2.3f,0.6f,0.04f};
-    CharSequence airValues[]={"","","","","",""};
+    //raw airData
 
 
     @Override
@@ -33,11 +31,6 @@ public class AirActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
 
-                //converts data into string so can be displayed
-                //PUT IN OWN METHOD
-                for (int j = 0; j < incomingAir.length; j++) {
-                    airValues[j] = Float.toString(incomingAir[j]);
-                }
 
                 //sets each text view into array
                 view[0] = (TextView) stub.findViewById(R.id.text1);
@@ -48,8 +41,14 @@ public class AirActivity extends Activity {
                 view[5] = (TextView) stub.findViewById(R.id.text6);
 
                 //insert value into data type
-                for (int i = 0; i < 5; i++) {
-                    view[i].setText(airValues[i]);
+                for(int i=0;i<6;i++) {
+                    String input = MainActivityWear.airData[i][1];
+                    Double in = Double.parseDouble(input);
+
+                    if(in==0.0){
+                        input="-";
+                    }
+                    view[i].setText(input);
                 }
 
 
@@ -65,9 +64,5 @@ public class AirActivity extends Activity {
                 });
             }
         });
-//        String[] data = getIntent().getStringArrayExtra("dataMap");
-//        if(data != null) {
-//            Log.v("MainActivityAir", "value:" + data[0]);
-//        }
     }
 }

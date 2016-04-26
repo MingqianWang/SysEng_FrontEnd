@@ -50,12 +50,11 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="CO"
+                    android:text="NO\u2082"
                     android:textColor="@color/black_54p"
                     android:textSize="20sp"/>
 
                 <LinearLayout
-
                     android:orientation="horizontal"
                     android:columnCount="5"
                     android:paddingTop="4dp"
@@ -64,41 +63,103 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:id="@+id/Grid1a"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid1b"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid1c"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid1d"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid1e"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid1b"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid1a"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <!--android:background="@color/light_grey"-->
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid1d"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid1c"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid1f"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid1e"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid1h"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid1g"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid1j"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid1i"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -108,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingLeft="20dp"
-                    android:text="PM\u2082\u2085"
+                    android:text="CO"
                     android:textColor="@color/black_54p"
                     android:textSize="20dp"/>
 
@@ -121,97 +182,107 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:id="@+id/Grid2a"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
                     <RelativeLayout
                         android:id="@+id/Grid2b"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
                         android:background="@color/light_grey"
                         android:layout_margin="1dp">
+                        <!--android:background="@color/light_grey"-->
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid2a"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                        <!--android:background="@color/light_grey"-->
+                    </RelativeLayout>
+                    </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/Grid2d"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                        <!--android:background="@color/light_grey"-->
                     </RelativeLayout>
                     <RelativeLayout
                         android:id="@+id/Grid2c"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
                         android:background="@color/light_grey"
                         android:layout_margin="1dp">
+                        <!--android:background="@color/light_grey"-->
                     </RelativeLayout>
+                    </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
                     <RelativeLayout
-                        android:id="@+id/Grid2d"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
+                        android:id="@+id/Grid2f"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
                         android:background="@color/light_grey"
                         android:layout_margin="1dp">
                     </RelativeLayout>
                     <RelativeLayout
                         android:id="@+id/Grid2e"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
                         android:background="@color/light_grey"
                         android:layout_margin="1dp">
+                        <!--android:background="@color/light_grey"-->
                     </RelativeLayout>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="20dp"
-                    android:text="NO\u2082"
-                    android:textColor="@color/black_54p"
-                    android:textSize="20dp"/>
-
+                    </LinearLayout>
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:columnCount="5"
-                    android:paddingTop="4dp"
-                    android:paddingLeft="20dp"
-                    android:layout_gravity="center"
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/Grid2h"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid2g"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/Grid2j"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/Grid2i"
+                        android:layout_height="10dp"
+                        android:layout_width="8dp"
+                        android:background="@color/light_grey"
+                        android:layout_margin="1dp">
+                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <RelativeLayout
-                        android:id="@+id/Grid3a"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid3b"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid3c"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid3d"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid3e"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -222,10 +293,9 @@
                     android:paddingLeft="20dp"
                     android:text="SO\u2082"
                     android:textColor="@color/black_54p"
-                    android:textSize="20sp"/>
+                    android:textSize="20dp"/>
 
                 <LinearLayout
-
                     android:orientation="horizontal"
                     android:columnCount="5"
                     android:paddingTop="4dp"
@@ -234,41 +304,101 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:id="@+id/Grid4a"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid4b"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid4c"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid4d"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid4e"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid3b"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid3a"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid3d"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid3c"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid3f"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid3e"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid3h"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid3g"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid3j"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid3i"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -292,41 +422,104 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:id="@+id/Grid5a"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid5b"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid5c"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid5d"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid5e"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid4b"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                            <!--android:background="@color/light_grey"-->
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid4a"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                            <!--android:background="@color/light_grey"-->
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid4d"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid4c"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid4f"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid4e"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid4h"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid4g"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid4j"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid4i"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+
 
 
                 </LinearLayout>
@@ -350,41 +543,220 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:id="@+id/Grid6a"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid6b"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid6c"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid6d"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/Grid6e"
-                        android:layout_height="22dp"
-                        android:layout_width="5dp"
-                        android:background="@color/light_grey"
-                        android:layout_margin="1dp">
-                    </RelativeLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid5b"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid5a"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid5d"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid5c"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid5f"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid5e"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid5h"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid5g"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid5j"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid5i"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:text="PM\u2082\u2085"
+                    android:textColor="@color/black_54p"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:columnCount="5"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid6b"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid6a"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid6d"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid6c"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid6f"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid6e"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid6h"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid6g"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/Grid6j"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Grid6i"
+                            android:layout_height="10dp"
+                            android:layout_width="8dp"
+                            android:background="@color/light_grey"
+                            android:layout_margin="1dp">
+                        </RelativeLayout>
+                    </LinearLayout>
 
 
                 </LinearLayout>

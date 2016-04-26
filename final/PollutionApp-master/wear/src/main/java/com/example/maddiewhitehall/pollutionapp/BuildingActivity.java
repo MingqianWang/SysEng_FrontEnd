@@ -28,7 +28,13 @@ public class BuildingActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 LUXReading = (TextView) stub.findViewById(R.id.light_reading);
 
-                LUXReading.setText(Float.toString(incomingUV));
+                if(Double.parseDouble(MainActivityWear.lightData[0][1])==0.0){
+                    LUXReading.setText("-");
+                }
+                else{
+                    LUXReading.setText(MainActivityWear.lightData[0][1]);
+                }
+
 
                 button = (ImageButton) stub.findViewById(R.id.lightButton);
                 button.setOnClickListener(new View.OnClickListener() {
